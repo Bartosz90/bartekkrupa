@@ -1,0 +1,130 @@
+@import '../index.sass'
+
+.nav 
+    position: relative
+    width: 100vw
+    height: 100vh
+    overflow: hidden
+.hamburger 
+    +flexCenter()
+    position: fixed 
+    top: 20px 
+    right: 20px
+    width: 50px
+    background-color: transparent
+    border: none
+    cursor: pointer
+    overflow: hidden
+    outline: none
+    padding: 5px 
+    z-index: 10
+    .bar 
+        width: 90%
+        height: 4px 
+        margin: 3px 
+        background-color: #fff
+        transition: .7s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+        transform-origin: center center
+        border-radius: 2px
+
+
+.menuBackground 
+    visibility: hidden
+    position: absolute 
+    top: -50vw
+    right: -50vw
+    width: 10px
+    height: 10px
+    background-color: #fff
+    border-radius: 50%
+    transition: .8s linear 
+.menuHeader 
+    visibility: hidden
+    position: fixed 
+    left: 2vw
+    top: -100px
+    transform-origin: left top
+    transform: rotate(-90deg)
+    font-size: 14rem
+    color: $dark2
+    transition: .6s
+    @media (max-width: 1024px)
+        font-size: 7rem
+
+    @media (orientation: portrait)
+        display: none
+.linkContainer   
+    position: fixed 
+    top: 50% 
+    left: 50% 
+    width: 100vw
+    height: 100vh
+    background-color: transparent 
+    transform: translate(-50%,-50%)
+    +flexCenter()
+    align-content: center
+    perspective: 400px
+    .navBtn 
+        width: 51%
+        margin: 40px 45vw
+        color: $dark2
+        text-decoration: none
+        text-align: center
+        font-size: 3rem
+        border-radius: 4px
+        transition: .4s linear
+        visibility: hidden 
+        opacity: 0
+        transform: rotateX(12deg) rotateY(12deg)
+        animation: cardFloat 10s linear infinite
+        &:hover
+            animation:  cardFloat 10s linear infinite, shadowPulse 1s
+        @media (max-width: 1024px)
+            margin: 10px 35vw
+        @keyframes cardFloat 
+            25% 
+                transform: rotateX(12deg) rotateY(-12deg) translateY(-10px) 
+            50% 
+                transform: rotateX(-12deg) rotateY(-12deg) translateY(-20px)
+            75%
+                transform: rotateX(-12deg) rotateY(12deg) translateY(-10px)
+            100%
+                transform: rotateX(12deg) rotateY(12deg) translateY(0px)
+        @keyframes shadowPulse 
+            0% 
+                box-shadow: 0px 0px 0px 0px rgba(0,0,0,1) 
+            100% 
+                box-shadow: 0px 0px 50px 20px rgba(0,0,0,0)
+        @media (orientation: portrait) 
+            margin: 20px 0
+    .navBtn:nth-of-type(2)
+        animation-duration: 12s, .7s
+    .navBtn:nth-of-type(3)
+        animation-duration: 11s, .7s
+    .navBtn:nth-of-type(4)
+        animation-duration: 13s, .7s
+    .selected 
+        border: 4px solid $dark2
+
+
+nav.active 
+    .bar 
+        background-color: $dark2
+    .bar2
+        transform: translateX(-60px)
+    .bar1
+        transform: translateY(10px) rotate(45deg)
+    .bar3
+        transform: translateY(-10px) rotate(-45deg)
+    .menuBackground 
+        visibility: visible
+        width: 320vw
+        height: 320vw
+    .menuHeader 
+        visibility: visible
+        transform: rotate(-90deg) translateX(-95vh)
+        @media (max-width: 1024px)
+            transform: rotate(-90deg) translateX(-120vh)
+    .navBtn 
+        visibility: visible
+        opacity: 1

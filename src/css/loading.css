@@ -1,0 +1,47 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  background-size: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0f0f0f;
+  background-attachment: fixed;
+  -webkit-transition: 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  -webkit-animation: loading 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+          animation: loading 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@-webkit-keyframes loading {
+  0% {
+    top: 110vh;
+  }
+  40% {
+    top: 0;
+  }
+  60% {
+    top: 0;
+  }
+  100% {
+    top: -110vh;
+  }
+}
+
+@keyframes loading {
+  0% {
+    top: 110vh;
+  }
+  40% {
+    top: 0;
+  }
+  60% {
+    top: 0;
+  }
+  100% {
+    top: -110vh;
+  }
+}
