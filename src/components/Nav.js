@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { StateContext } from "./App";
-import { LoadingContext } from "./App";
 import "../styles/nav.sass";
 
 const Nav = () => {
   const [state, setState] = useContext(StateContext);
-  const handleLoadingScreen = useContext(LoadingContext);
 
   const toggleMenu = () => {
     setState(state => ({
@@ -15,9 +13,9 @@ const Nav = () => {
     }));
   };
   const handleSectionChange = () => {
-    toggleMenu();
     setState(state => ({
       ...state,
+      menuActive: false,
       loading: true
     }));
     setTimeout(() => {
@@ -25,7 +23,8 @@ const Nav = () => {
         ...state,
         loading: false
       }));
-    }, 2000);
+      console.log("DONE");
+    }, 1000);
   };
 
   const links = [
@@ -63,9 +62,7 @@ const Nav = () => {
 
       <h3 className="menuHeader">menu</h3>
 
-      <div onClick={toggleMenu} className="linkContainer">
-        {navLinks}
-      </div>
+      <div className="linkContainer">{navLinks}</div>
     </nav>
   );
 };

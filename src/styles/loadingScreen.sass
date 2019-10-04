@@ -1,17 +1,19 @@
-.loader
+@import '../index.sass'
+    
+.loadingScreen
     position: fixed
     top: 0
     left: 0
     width: 100vw 
     height: 100vh
-    z-index: 5000
+    z-index: 500000
     background-size: 500px
     background-position: center
     background-repeat: no-repeat
     background-color: #000
     background-attachment: fixed
-    transition: 1s cubic-bezier(0.68, -0.55, 0.27, 1.55)
-    animation: loading 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) 
+    // animation: loading 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) 
+    animation: loading 1s linear
     @keyframes loading 
         0% 
             top: 110vh

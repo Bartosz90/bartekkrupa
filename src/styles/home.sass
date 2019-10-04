@@ -1,0 +1,43 @@
+@import '../index.sass'
+
+$center: translate(-50%,-50%)
+
+.header 
+    position: relative
+    width: 100vw 
+    height: 100vh
+    perspective: 1000px
+    .deep 
+        position: absolute
+        left: 50% 
+        top: 50%
+        border: 1px solid white
+        transition: .3s linear
+        transform: $center 
+        width: 300px
+        height: 200px
+        background-color: rgba(0,0,0,.5)
+        +flexCenter()
+        h1 
+            text-align: center
+    // .deep1
+    //     transform: $center translateZ(0px)
+    // .deep2
+    //     transform: $center translateZ(-1000px)
+    // .deep3
+    //     transform: $center translateZ(-2000px)
+    .arrow 
+        position: fixed 
+        right: 50%
+        transform: translateX(50%)
+        background-color: transparent
+        border: none 
+        color: #fff 
+        font-size: 3rem
+        cursor: pointer
+        outline: none
+    .arrowUp 
+        bottom: 100px
+    .arrowDown 
+        bottom: 20px
+        
