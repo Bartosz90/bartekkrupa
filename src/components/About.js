@@ -1,20 +1,26 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { StateContext } from "./App";
 import "../styles/about.sass";
 
 const About = () => {
-  const [state] = useContext(StateContext);
-  const [particlesState, setParticlesState] = useState({
-    moveParticles: false,
-    colorParticles: false
-  });
+  const [state, setState] = useContext(StateContext);
 
-  const { moveParticles, colorParticles } = particlesState;
+  useEffect(() => {
+    setState(state => ({ ...state, loadingScreen: true }));
+    setTimeout(() => {
+      setState(state => ({
+        ...state,
+        loadingScreen: false
+      }));
+    }, 1200);
+  }, [setState]);
 
-  const particlesNumber = [];
+  const [colorParticles, setColorParticles] = useState(false);
+
+  const particlesAmount = [];
 
   for (let i = 0; i < 60; i++) {
-    particlesNumber.push(i);
+    particlesAmount.push(i);
   }
 
   function getRandomArbitrary(min, max) {
@@ -27,7 +33,7 @@ const About = () => {
   }
 
   const timings = ["linear", "ease", "ease-in-out", "ease-in", "ease-out"];
-  const particles = particlesNumber.map(particle => {
+  const particles = particlesAmount.map(particle => {
     const dimensions = getRandomInt(2, 6);
     const positionY = getRandomInt(2, 98);
     const positionX = getRandomInt(2, 98);
@@ -62,26 +68,13 @@ const About = () => {
   });
   return (
     <>
-      {!state.loading && (
-        <div
-          // onClick={() =>
-          //   setParticlesState({
-          //     ...particlesState,
-          //     moveParticles: !moveParticles
-          //   })
-          // }
-          className={"particlesDiv"}
-        >
-          {particles}
-        </div>
+      {!state.loadingScreen && (
+        <div className={"particlesDiv"}>{particles}</div>
       )}
       <button
         className={colorParticles ? "colorChanger white" : "colorChanger color"}
         onClick={() => {
-          setParticlesState({
-            ...state,
-            colorParticles: !colorParticles
-          });
+          setColorParticles(!colorParticles);
         }}
       >
         <i className="fas fa-paint-brush"></i>

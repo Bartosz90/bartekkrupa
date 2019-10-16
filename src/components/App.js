@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import "../styles/app.sass";
 import Nav from "./Nav";
+import LanguageButton from "./LanguageButton";
 import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
@@ -18,7 +19,10 @@ export const StateContext = createContext();
 function App() {
   const [state, setState] = useState({
     menuActive: false,
-    loading: false
+    loadingScreen: false,
+    polishVersion: false,
+    changingLanguage: false,
+    firstVisit: true
   });
 
   (function hideOverflow() {
@@ -33,7 +37,8 @@ function App() {
     <Router>
       <StateContext.Provider value={[state, setState]}>
         <Nav />
-        {state.loading && <LoadingScreen />}
+        <LanguageButton />
+        {state.loadingScreen && !state.firstVisit && <LoadingScreen />}
         <Switch>
           <Redirect exact from="/bartekkrupa" to="/" />
           <Route exact path="/" component={Home} />
@@ -41,7 +46,6 @@ function App() {
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/contact" component={Contact} />
         </Switch>
-        {/* <Particles />  */}
       </StateContext.Provider>
     </Router>
   );

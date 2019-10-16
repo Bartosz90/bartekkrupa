@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { StateContext } from "./App";
 
 const Contact = () => {
+  const [state, setState] = useContext(StateContext);
+
+  useEffect(() => {
+    setState(state => ({ ...state, loadingScreen: true }));
+    setTimeout(() => {
+      setState(state => ({
+        ...state,
+        loadingScreen: false
+      }));
+    }, 1200);
+  }, [setState]);
   return (
-    <div>
-      <h1>contact</h1>
-    </div>
+    <>
+      {!state.loadingScreen && (
+        <div>
+          <h1>contact</h1>
+        </div>
+      )}
+    </>
   );
 };
 

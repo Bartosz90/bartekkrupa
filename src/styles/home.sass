@@ -3,41 +3,151 @@
 $center: translate(-50%,-50%)
 
 .header 
-    position: relative
     width: 100vw 
     height: 100vh
+    display: flex 
+    justify-content: flex-start
+    align-items: center 
+    align-content: center 
+    flex-wrap: wrap
     perspective: 1000px
-    .deep 
-        position: absolute
-        left: 50% 
-        top: 50%
-        border: 1px solid white
-        transition: .3s linear
-        transform: $center 
-        width: 300px
-        height: 200px
-        background-color: rgba(0,0,0,.5)
-        +flexCenter()
-        h1 
-            text-align: center
-    // .deep1
-    //     transform: $center translateZ(0px)
-    // .deep2
-    //     transform: $center translateZ(-1000px)
-    // .deep3
-    //     transform: $center translateZ(-2000px)
-    .arrow 
+    transform-style: preserve-3d
+    opacity: 0
+    animation: mainSectionFadeIn 1s linear forwards
+    overflow: hidden
+    @keyframes mainSectionFadeIn 
+        100% 
+            opacity: 1
+    h1 
+        width: 100%
+        margin-left: 100px
+        margin-bottom: 20px
+        font-size: 100px
+        display: flex
+        @media (max-width: 1000px)
+            margin-left: 20px 
+            font-size: 50px
+        @media (max-width: 550px)
+            font-size: 33px
+        @media (max-width: 400px)
+            font-size: 38px
+        @keyframes changingLanguage 
+            0% 
+                color: #000 
+            100% 
+                color: #fff
+        span 
+            transform: translate(40vw, -40vh) translateZ(700px) scale(4)
+            @keyframes letterAppear 
+                0% 
+                    opacity: 0
+                100% 
+                    transform: none
+                    opacity: 1
+       
+    .skill 
         position: fixed 
-        right: 50%
-        transform: translateX(50%)
-        background-color: transparent
-        border: none 
-        color: #fff 
-        font-size: 3rem
-        cursor: pointer
-        outline: none
-    .arrowUp 
-        bottom: 100px
-    .arrowDown 
-        bottom: 20px
+        width: auto
+        margin: 0
+        padding: 0 10px
+        font-size: 70px
+        color: #000
+        z-index: 1
+        opacity: 0
+        overflow: hidden
+        animation: addOpacity .1s forwards 3.5s
+        @media (max-width: 1000px)
+            font-size: 37px
+        @media (max-width: 550px)
+            font-size: 30px
+        @keyframes addOpacity 
+            100% 
+                opacity: 1
+        &::before 
+            content: ""
+            position: absolute 
+            top: 0
+            left: 0
+            width: 100% 
+            height: 100% 
+            background-color: #fff
+            z-index: -1
         
+    .skill1 
+        top: 80vh
+        left: 150px
+        @media (max-width: 400px)
+            left: 30px
+        &::before 
+            left: -100%
+            animation: skill1Appear 7s linear 4s infinite 
+            @keyframes skill1Appear 
+                33% 
+                    transform: translateX(210%)
+                100% 
+                    transform: translateX(210%)
+
+    .skill2
+        top: 48vh
+        left: 55vw
+        transform: rotateY(-60deg)
+        @media (max-width: 400px)
+            top: 65vh
+            left: 60px
+        &::before 
+            top: -100%
+            animation: skill2Appear 7s linear 4s infinite 
+            @keyframes skill2Appear 
+                33% 
+                    transform: none
+                66% 
+                    transform: translateY(210%)
+                100% 
+                    transform: translateY(210%)
+
+    .skill3 
+        top: 18vh
+        left: 20vw
+        transform: rotateY(50deg)
+        @media (max-width: 400px)
+            left: 5vw
+        &::before 
+            left: 100%
+            animation: skill3Appear 7s linear 4s infinite 
+            @keyframes skill3Appear 
+                66% 
+                    transform: none
+                100% 
+                    transform: translateX(-210%)
+           
+
+    
+
+.letter 
+    position: fixed 
+    font-weight: bold 
+    font-size: 100px
+    @media (max-width: 1000px)
+        font-size: 60px
+    @media (max-width: 550px)
+        font-size: 33px
+    @media (max-width: 400px)
+        font-size: 38px
+
+@keyframes letterMove1
+    100% 
+        transform: translate(20vw, 20vh)
+        opacity: 0
+@keyframes letterMove2
+    100% 
+        transform: translate(20vw, -20vh)
+        opacity: 0
+@keyframes letterMove3
+    100% 
+        transform: translate(-20vw, 20vh)
+        opacity: 0
+@keyframes letterMove4
+    100% 
+        transform: translate(-20vw, -20vh)
+        opacity: 0
+    

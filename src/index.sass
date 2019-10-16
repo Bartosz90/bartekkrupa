@@ -31,29 +31,10 @@ html
 body 
     min-height: 100vh
     overflow-x: hidden
-    background-color: $dark2
+    background-color: #000
     font-family: 'Rubik', sans-serif
     color: #fff
     +flexCenter()
-    perspective: 400px 
-    // h1 
-    //     transition: 1s 
-    //     // transform-origin: left center
-    //     &:hover 
-    //         // transform: rotateY(40deg)
-    // h1:nth-of-type(1)
-    //     animation: float 30s linear infinite
-    //     @keyframes float 
-    //         20% 
-    //             transform: rotate(3deg) rotateY(3deg) translateY(-15px)
-    //         40%
-    //             transform: rotate(-3deg) rotateY(-3deg) translateY(-20px)
-    //         60%
-    //             transform: rotate(-3deg) rotateY(3deg) translateY(-15px)
-    //         80%
-    //             transform: rotate(3deg) rotateY(-3deg) 
-    //         100% 
-    //             transform: none
 
 
 .button
@@ -103,85 +84,13 @@ body
         animation: none
         transform: rotateY(180deg)
 
-.floatingDiv 
-    position: fixed
-    left: 45%
-    bottom: 15%
-    width: 300px
-    height: 200px 
-    perspective: 1000px
-    transition: 1s linear
-    transform-style: preserve-3d
-    transform: rotateX(8deg) rotateY(8deg)
-    animation: cardFloat 10s linear infinite
-    @keyframes cardFloat 
-        25% 
-            transform: rotateX(8deg) rotateY(-8deg) translateY(-10px) 
-        50% 
-            transform: rotateX(-8deg) rotateY(-8deg) translateY(-20px)
-        75%
-            transform: rotateX(-8deg) rotateY(8deg) translateY(-10px)
-        100%
-            transform: rotateX(8deg) rotateY(8deg) translateY(0px)
-    .project 
-        position: relative 
-        width: 200px
-        height: 300px
-        transition: 1s
-        transform-style: preserve-3d
-        transform: translateZ(-5px)
-        .projectFace 
-            position: absolute
-            backface-visibility: visible
-            +flexCenter()
-            background-color: rgba(0,0,0,.8)
-            color: #fff
-            border: 2px solid white
-            border-radius: 8px
-        .projectFaceBack, .projectFaceFront
-            width: 300px 
-            height: 200px
-        .projectFaceRight, .projectFaceLeft
-            width: 20px 
-            height: 200px
-            left: 135px
-        .projectFaceTop, .projectFaceBottom
-            width: 300px 
-            height: 20px
-            top: 85px
-        .projectFaceFront 
-            transform: rotateY(  0deg) translateZ( 10px)
-        .projectFaceBack
-            transform: rotateY(  180deg) translateZ( 10px)
-        .projectFaceRight 
-            transform: rotateY(  90deg) translateZ( 155px)
-        .projectFaceLeft
-            transform: rotateY(  -90deg) translateZ( 145px)
-        .projectFaceTop 
-            transform: rotateX(  90deg) translateZ( 95px)
-        .projectFaceBottom 
-            transform: rotateX(  -90deg) translateZ( 105px)
-            
-.project.active 
-    transform: rotateY(180deg)
-.floatingDiv2
-    left: 100px 
-    top: 100px 
-    animation-delay: 2s
-.floatingDiv3
-    left: 1350px 
-    top: 200px 
-    animation-delay: 3s
-.floatingDiv4
-    left: 200px 
-    top: 700px 
-    animation-delay: 5s
-.floatingDiv5
-    left: 650px 
-    top: 100px 
-    animation-delay: 6s
+
 
 
 
 .mainSection 
     overflow-y: hidden
+
+
+
+

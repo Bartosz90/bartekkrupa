@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../img/logo.png";
+import logo from "../img/logo5.png";
 import "../styles/loadingScreen.sass";
 
 const LoadingScreen = () => {

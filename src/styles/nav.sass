@@ -1,7 +1,13 @@
 @import '../index.sass'
 
 .nav 
+    position: absolute
+    top: 0
+    left: 0
+    width: 100vw 
+    height: 100vh
     overflow: hidden
+
 .hamburger 
     +flexCenter()
     position: fixed 
@@ -28,13 +34,19 @@
 .menuBackground 
     visibility: hidden
     position: absolute
-    top: -50vw
-    right: -50vw
-    width: 10px
-    height: 10px
+    // top: -50vw
+    // right: -50vw
+    // width: 10px
+    // height: 10px
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 1vw
+    height: 1vw
     background-color: #fff
     border-radius: 50%
-    transition: .8s linear 
+    // transition: .8s linear 
+    transition: .3s linear
     z-index: 50
 .menuHeader 
     visibility: hidden
@@ -44,7 +56,7 @@
     transform-origin: left top
     transform: rotate(-90deg)
     font-size: 14rem
-    color: $dark2
+    color: #000
     transition: .6s
     z-index: 51
     @media (max-width: 1024px)
@@ -68,27 +80,31 @@
     .navBtn 
         width: 51%
         margin: 40px 45vw
-        color: $dark2
+        color: #000
         text-decoration: none
         text-align: center
+        text-transform: uppercase
         font-size: 3rem
         border-radius: 4px
         transition: .2s linear
         visibility: hidden 
         opacity: 0
-        transform: rotateX(12deg) rotateY(12deg)
-        animation: cardFloat 10s linear infinite
+        transform: rotateX(12deg) rotateY(12deg) translateY(0px)
+        animation: linkFloat 13s linear infinite
         &:hover
-            animation:  cardFloat 10s linear infinite, shadowPulse 1s
+            // animation:  cardFloat 10s linear infinite, shadowPulse 1s
+            animation:  linkFloat 13s linear infinite
+            letter-spacing: 2px
         @media (max-width: 1024px)
+            width: 80%
             margin: 10px 35vw
-        @keyframes cardFloat 
+        @keyframes linkFloat 
             25% 
-                transform: rotateX(12deg) rotateY(-12deg) translateY(-10px) 
+                transform: rotateX(12deg) rotateY(-12deg) translateY(-5px) 
             50% 
-                transform: rotateX(-12deg) rotateY(-12deg) translateY(-20px)
+                transform: rotateX(-12deg) rotateY(12deg) translateY(5px)
             75%
-                transform: rotateX(-12deg) rotateY(12deg) translateY(-10px)
+                transform: rotateX(-12deg) rotateY(-12deg) translateY(-5px)
             100%
                 transform: rotateX(12deg) rotateY(12deg) translateY(0px)
         @keyframes shadowPulse 
@@ -99,19 +115,19 @@
         @media (orientation: portrait) 
             margin: 20px 0
     .navBtn:nth-of-type(2)
-        animation-duration: 12s, .7s
+        animation-duration: 17s, .7s
     .navBtn:nth-of-type(3)
-        animation-duration: 11s, .7s
+        animation-duration: 15s, .7s
     .navBtn:nth-of-type(4)
-        animation-duration: 13s, .7s
+        animation-duration: 19s, .7s
     .selected 
-        border: 4px solid $dark2
+        border: 4px solid #000
 
 
 nav.active 
     visibility: visible
     .bar 
-        background-color: $dark2
+        background-color: #000
     .bar2
         transform: translateX(-60px)
     .bar1
@@ -120,8 +136,13 @@ nav.active
         transform: translateY(-10px) rotate(-45deg)
     .menuBackground 
         visibility: visible
-        width: 320vw
-        height: 320vw
+        // width: 320vw
+        // height: 320vw
+        width: 120vw 
+        height: 120vw
+        @media (orientation: portrait)
+            width: 120vh
+            height: 120vh
     .menuHeader 
         visibility: visible
         transform: rotate(-90deg) translateX(-95vh)

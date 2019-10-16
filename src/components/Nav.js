@@ -12,26 +12,12 @@ const Nav = () => {
       menuActive: !state.menuActive
     }));
   };
-  const handleSectionChange = () => {
-    setState(state => ({
-      ...state,
-      menuActive: false,
-      loading: true
-    }));
-    setTimeout(() => {
-      setState(state => ({
-        ...state,
-        loading: false
-      }));
-      console.log("DONE");
-    }, 1000);
-  };
 
   const links = [
-    { id: 1, name: "home", path: "/" },
-    { id: 2, name: "about", path: "/about" },
-    { id: 3, name: "projects", path: "/projects" },
-    { id: 4, name: "contact", path: "/contact" }
+    { id: 1, name: "home", namePl: "główna", path: "/" },
+    { id: 2, name: "about", namePl: "o mnie", path: "/about" },
+    { id: 3, name: "projects", namePl: "projekty", path: "/projects" },
+    { id: 4, name: "contact", namePl: "kontakt", path: "/contact" }
   ];
 
   const navLinks = links.map(link => (
@@ -41,13 +27,9 @@ const Nav = () => {
       to={link.path}
       className="navBtn"
       activeClassName="selected"
-      onClick={
-        window.location.pathname !== link.path
-          ? handleSectionChange
-          : toggleMenu
-      }
+      onClick={toggleMenu}
     >
-      {link.name}
+      {state.polishVersion ? link.namePl : link.name}
     </NavLink>
   ));
   return (
