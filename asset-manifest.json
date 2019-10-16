@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/bartekkrupa/static/css/main.b27efb93.chunk.css",
-    "main.js": "/bartekkrupa/static/js/main.3b74e926.chunk.js",
-    "main.js.map": "/bartekkrupa/static/js/main.3b74e926.chunk.js.map",
+    "main.css": "/bartekkrupa/static/css/main.b4e4ab23.chunk.css",
+    "main.js": "/bartekkrupa/static/js/main.cb3fcb79.chunk.js",
+    "main.js.map": "/bartekkrupa/static/js/main.cb3fcb79.chunk.js.map",
     "runtime-main.js": "/bartekkrupa/static/js/runtime-main.c6340741.js",
     "runtime-main.js.map": "/bartekkrupa/static/js/runtime-main.c6340741.js.map",
-    "static/js/2.c6898182.chunk.js": "/bartekkrupa/static/js/2.c6898182.chunk.js",
-    "static/js/2.c6898182.chunk.js.map": "/bartekkrupa/static/js/2.c6898182.chunk.js.map",
+    "static/js/2.1bd18cf9.chunk.js": "/bartekkrupa/static/js/2.1bd18cf9.chunk.js",
+    "static/js/2.1bd18cf9.chunk.js.map": "/bartekkrupa/static/js/2.1bd18cf9.chunk.js.map",
     "index.html": "/bartekkrupa/index.html",
-    "precache-manifest.4916c4d52d978a2eae4b71b8ae1f17d7.js": "/bartekkrupa/precache-manifest.4916c4d52d978a2eae4b71b8ae1f17d7.js",
+    "precache-manifest.a97e5f0634f79ae320046f6b8e049d07.js": "/bartekkrupa/precache-manifest.a97e5f0634f79ae320046f6b8e049d07.js",
     "service-worker.js": "/bartekkrupa/service-worker.js",
-    "static/css/main.b27efb93.chunk.css.map": "/bartekkrupa/static/css/main.b27efb93.chunk.css.map",
-    "static/media/logo.png": "/bartekkrupa/static/media/logo.ef831687.png"
+    "static/css/main.b4e4ab23.chunk.css.map": "/bartekkrupa/static/css/main.b4e4ab23.chunk.css.map",
+    "static/media/logo5.png": "/bartekkrupa/static/media/logo5.70920a4d.png"
   }
 }
