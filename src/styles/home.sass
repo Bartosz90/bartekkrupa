@@ -28,9 +28,9 @@ $center: translate(-50%,-50%)
             margin-left: 20px 
             font-size: 50px
         @media (max-width: 550px)
-            font-size: 33px
-        @media (max-width: 400px)
-            font-size: 45px
+            font-size: 50px
+        @media (max-width: 340px)
+            font-size: 38px
         @keyframes changingLanguage 
             0% 
                 color: #000 
@@ -79,16 +79,16 @@ $center: translate(-50%,-50%)
            
 .whiteBackground 
     position: fixed 
-    width: 90vw 
+    width: 97vw 
     height: 80px 
     bottom: 8vh 
     left: -2px
     background-color: rgba(255,255,255,.9)
     z-index: -1
     opacity: 0
-    animation: bgAppear .3s forwards 4.5s, moveBackground 7s infinite 5.6s
+    animation: bgAppear 1s forwards 4.5s, moveBackground 7s infinite 5.6s
     @media (orientation: portrait)
-        animation: bgAppear .3s forwards 4.5s, moveBackgroundOnMobiles 7s infinite 5.6s
+        animation: bgAppear 1s forwards 4.5s, moveBackgroundOnMobiles 7s infinite 5.6s
     @keyframes bgAppear 
         100% 
             opacity: 1
