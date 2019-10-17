@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d06e224256f0d9e1199eeeb044a74379",
+    "revision": "f8bc363cf22aa9427ec7b1e61bb34f9c",
     "url": "/bartekkrupa/index.html"
   },
   {
-    "revision": "fea3b12c08c8a52ee012",
-    "url": "/bartekkrupa/static/css/main.b4e4ab23.chunk.css"
+    "revision": "dc0d8de64931c050ffe0",
+    "url": "/bartekkrupa/static/css/main.f0dad396.chunk.css"
   },
   {
     "revision": "1f8d784686803df3fbdd",
     "url": "/bartekkrupa/static/js/2.1bd18cf9.chunk.js"
   },
   {
-    "revision": "fea3b12c08c8a52ee012",
-    "url": "/bartekkrupa/static/js/main.cb3fcb79.chunk.js"
+    "revision": "dc0d8de64931c050ffe0",
+    "url": "/bartekkrupa/static/js/main.2a0f4553.chunk.js"
   },
   {
     "revision": "3699326969a9d2b11b51",

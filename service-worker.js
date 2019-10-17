@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/bartekkrupa/precache-manifest.a97e5f0634f79ae320046f6b8e049d07.js"
+  "/bartekkrupa/precache-manifest.5b31a6e1e2a4ac17ce1ed74fcb11c1b6.js"
 );
 
 self.addEventListener('message', (event) => {
