@@ -48,7 +48,7 @@ const Letters = () => {
           top: `${getRandomInt(2, 92)}vh`,
           left: `${getRandomInt(2, 92)}vw`,
           animation: `letterMove${getRandomInt(1, 4)} 1s forwards`,
-          animationDelay: `${getRandomArbitrary(0.3, 1.3)}s`
+          animationDelay: `${getRandomArbitrary(1.5, 2.5)}s`
         }}
       >
         {letters[getRandomInt(0, letters.length - 1)]}

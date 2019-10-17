@@ -14,10 +14,15 @@ const Nav = () => {
   };
 
   const links = [
-    { id: 1, name: "home", namePl: "główna", path: "/" },
-    { id: 2, name: "about", namePl: "o mnie", path: "/about" },
-    { id: 3, name: "projects", namePl: "projekty", path: "/projects" },
-    { id: 4, name: "contact", namePl: "kontakt", path: "/contact" }
+    { id: 1, name: "home", namePl: "główna", path: "/bartekkrupa" },
+    { id: 2, name: "about", namePl: "o mnie", path: "/bartekkrupa/about" },
+    {
+      id: 3,
+      name: "projects",
+      namePl: "projekty",
+      path: "/bartekkrupa/projects"
+    },
+    { id: 4, name: "contact", namePl: "kontakt", path: "/bartekkrupa/contact" }
   ];
 
   const navLinks = links.map(link => (

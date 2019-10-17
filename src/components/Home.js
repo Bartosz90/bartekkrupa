@@ -19,7 +19,7 @@ const Home = () => {
     }, 1200);
     setTimeout(() => {
       setAnimationsDone(true);
-    }, 4500);
+    }, 5500);
   }, [setState]);
 
   const greeting = ["H", "e", "l", "l", "o,"];
@@ -67,7 +67,7 @@ const Home = () => {
               animationsDone ? "none" : "letterAppear 1s forwards"
             }`,
             transform: `${animationsDone ? "none" : transform()}`,
-            animationDelay: `${getRandomArbitrary(1, 2)}s`,
+            animationDelay: `${getRandomArbitrary(1.5, 2.5)}s`,
             visibility: `${letter === "-" ? "hidden" : ""}`
           }}
         >
@@ -85,7 +85,7 @@ const Home = () => {
   ];
   const headerDescriptionsPl = [
     "Tworzę aplikacje webowe.",
-    "Projektuję strony",
+    "Projektuję strony.",
     "Jestem front-end devem."
   ];
 

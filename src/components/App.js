@@ -40,11 +40,11 @@ function App() {
         <LanguageButton />
         {state.loadingScreen && !state.firstVisit && <LoadingScreen />}
         <Switch>
-          <Redirect exact from="/bartekkrupa" to="/" />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/projects" component={Projects} />
-          <Route exact path="/contact" component={Contact} />
+          <Redirect exact from="/" to="/bartekkrupa" />
+          <Route exact path="/bartekkrupa" component={Home} />
+          <Route exact path="/bartekkrupa/about" component={About} />
+          <Route exact path="/bartekkrupa/projects" component={Projects} />
+          <Route exact path="/bartekkrupa/contact" component={Contact} />
         </Switch>
       </StateContext.Provider>
     </Router>

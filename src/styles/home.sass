@@ -30,7 +30,7 @@ $center: translate(-50%,-50%)
         @media (max-width: 550px)
             font-size: 33px
         @media (max-width: 400px)
-            font-size: 38px
+            font-size: 45px
         @keyframes changingLanguage 
             0% 
                 color: #000 
@@ -63,65 +63,63 @@ $center: translate(-50%,-50%)
         @keyframes addOpacity 
             100% 
                 opacity: 1
-        &::before 
-            content: ""
-            position: absolute 
-            top: 0
-            left: 0
-            width: 100% 
-            height: 100% 
-            background-color: #fff
-            z-index: -1
-        
     .skill1 
-        top: 80vh
-        left: 150px
-        @media (max-width: 400px)
-            left: 30px
-        &::before 
-            left: -100%
-            animation: skill1Appear 7s linear 4s infinite 
-            @keyframes skill1Appear 
-                33% 
-                    transform: translateX(210%)
-                100% 
-                    transform: translateX(210%)
+        bottom: 10vh
+        left: 0
 
     .skill2
-        top: 48vh
-        left: 55vw
-        transform: rotateY(-60deg)
-        @media (max-width: 400px)
-            top: 65vh
-            left: 60px
-        &::before 
-            top: -100%
-            animation: skill2Appear 7s linear 4s infinite 
-            @keyframes skill2Appear 
-                33% 
-                    transform: none
-                66% 
-                    transform: translateY(210%)
-                100% 
-                    transform: translateY(210%)
+        bottom: 25vh
+        right: 0
+        transform-origin: right center
 
     .skill3 
-        top: 18vh
-        left: 20vw
-        transform: rotateY(50deg)
-        @media (max-width: 400px)
-            left: 5vw
-        &::before 
-            left: 100%
-            animation: skill3Appear 7s linear 4s infinite 
-            @keyframes skill3Appear 
-                66% 
-                    transform: none
-                100% 
-                    transform: translateX(-210%)
-           
+        top: 20vh
+        left: 0
 
-    
+           
+.whiteBackground 
+    position: fixed 
+    width: 90vw 
+    height: 80px 
+    bottom: 8vh 
+    left: -2px
+    background-color: rgba(255,255,255,.9)
+    z-index: -1
+    opacity: 0
+    animation: bgAppear .3s forwards 4.5s, moveBackground 7s infinite 5.6s
+    @media (orientation: portrait)
+        animation: bgAppear .3s forwards 4.5s, moveBackgroundOnMobiles 7s infinite 5.6s
+    @keyframes bgAppear 
+        100% 
+            opacity: 1
+    @keyframes moveBackgroundOnMobiles
+        33% 
+            left: -2px
+            bottom: 70vh
+        66% 
+            left: 12vw 
+            bottom: 23vh
+        100% 
+            left: -2px 
+            bottom: 8vh
+    @keyframes moveBackground
+        33% 
+            left: -2px
+            bottom: 70vh
+        66% 
+            left: 50vw
+            bottom: 23vh
+        100% 
+            left: -2px 
+            bottom: 8vh
+    @media (min-width: 500px)
+        height: 45px
+        width: 80vw
+    @media (min-width: 1000px)
+        height: 80px
+    @media (min-width: 1400px)
+        height: 110px
+        width: 50vw
 
 .letter 
     position: fixed 
